@@ -8,7 +8,7 @@
 import threading
 import time
 
-from WebScraper import WebScraper
+from utility.WebScraper import WebScraper
 from gui.uis.dialog.ProcessDialog import ProcessDialog
 from utility import Config_Tool
 

@@ -513,8 +513,8 @@ class SetupMainWindow:
         self.save_btn.clicked.connect(lambda: save_file(self, caption, directory, file_filter, initial_filter))
 
         # 测试使用
-        self.file_path_line.setText('D:/Pycharm/Grade_Selenium/gui/student1.xls')
-        self.web_address_line.setText('http://218.26.234.85/views/search.html')
+        # self.file_path_line.setText('D:/Pycharm/Grade_Selenium/gui/student1.xls')
+        # self.web_address_line.setText('http://218.26.234.85/views/search.html')
 
         # ///////////////////////////////////////////////////////////////
         # END - EXAMPLE CUSTOM WIDGETS

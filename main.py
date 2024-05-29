@@ -127,6 +127,12 @@ class MainWindow(QMainWindow):
     def resizeEvent(self, event):
         SetupMainWindow.resize_grips(self)
 
+    # MOUSE CLICK EVENTS
+    # ///////////////////////////////////////////////////////////////
+    def mousePressEvent(self, event):
+        # SET DRAG POS WINDOW
+        self.dragPos = event.globalPos()
+
 # SETTINGS WHEN TO START
 # Set the initial class and also additional parameters of the "QApplication" class
 # ///////////////////////////////////////////////////////////////

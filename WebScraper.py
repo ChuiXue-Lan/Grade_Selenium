@@ -20,6 +20,7 @@ config.read('config/config.ini')
 class WebScraper:
     def __init__(self):
         self.sql = SQLite_Tool.SQL()
+        self.finish_num = 0  # 已完成数目
 
     # 爬取信息
     def get_info_web(self, garde_id, ID, name):
@@ -102,6 +103,7 @@ class WebScraper:
             self.sql.insert_grade(stu)
             # 提交事务
             self.sql.commit()
+            self.finish_num += 1
 
 
 if __name__ == '__main__':

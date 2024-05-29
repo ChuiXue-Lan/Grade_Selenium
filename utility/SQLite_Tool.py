@@ -12,9 +12,8 @@ import configparser
 config = configparser.ConfigParser()
 config.read('../config/config.ini', encoding='utf-8')
 path = config.get('excel', 'path')
-
-
 # save_path = config.get('excel', 'save_path')
+
 
 class SQL:
     def __init__(self):

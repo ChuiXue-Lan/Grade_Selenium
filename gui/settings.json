@@ -1,9 +1,9 @@
 {
-    "app_name": "PyOneDark - Modern GUI",
-    "version": "v1.0.1",
+    "app_name": "PyOneDark - GradeSelenium",
+    "version": "v3.0",
     "copyright": "By: \u5439\u96ea",
     "year": 2024,
-    "theme_name": "default",
+    "theme_name": "lan_bright",
     "custom_title_bar": true,
     "startup_size": [
         1400,
@@ -29,7 +29,7 @@
     "time_animation": 500,
     "font": {
         "family": "Segoe UI",
-        "title_size": 10,
-        "text_size": 9
+        "title_size": 16,
+        "text_size": 14
     }
 }

@@ -18,7 +18,7 @@ def run(window):
     new_file_path = window.file_path_line.text()
     new_web_site = window.web_address_line.text()
 
-    Config_Tool.modify_ini_file(new_file_path, new_web_site)
+    # Config_Tool.modify_ini_file(new_file_path, new_web_site)
 
     # 运行爬虫
     web_scraper = WebScraper()

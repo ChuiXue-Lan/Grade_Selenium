@@ -208,6 +208,9 @@ class SetupMainWindow:
         # 文件路径
         # Label
         self.file_path_label = QLabel('文件路径：')
+        self.file_path_label.setStyleSheet(
+            "font-size: 14pt"
+        )
 
         # Edit
         self.file_path_line = PyLineEdit(
@@ -238,7 +241,9 @@ class SetupMainWindow:
         # 查询网址
         # Label
         self.web_address_label = QLabel('网址：        ')
-
+        self.web_address_label.setStyleSheet(
+            "font-size: 14pt"
+        )
         # Edit
         self.web_address_line = PyLineEdit(
             text="",
@@ -305,107 +310,107 @@ class SetupMainWindow:
             context_color=self.themes["app_color"]["context_color"]
         )
         self.table_widget.setColumnCount(23)
-        self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.table_widget.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.table_widget.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 
         # Columns / Header
         self.column_0 = QTableWidgetItem()
         self.column_0.setTextAlignment(Qt.AlignCenter)
-        self.column_0.setText("NAME")
+        self.column_0.setText("name")
 
         self.column_1 = QTableWidgetItem()
         self.column_1.setTextAlignment(Qt.AlignCenter)
-        self.column_1.setText("NICK")
+        self.column_1.setText("exam_id")
 
         self.column_2 = QTableWidgetItem()
         self.column_2.setTextAlignment(Qt.AlignCenter)
-        self.column_2.setText("PASS")
+        self.column_2.setText("idcard")
 
         self.column_3 = QTableWidgetItem()
         self.column_3.setTextAlignment(Qt.AlignCenter)
-        self.column_3.setText("PASS")
+        self.column_3.setText("chinese")
 
         self.column_4 = QTableWidgetItem()
         self.column_4.setTextAlignment(Qt.AlignCenter)
-        self.column_4.setText("PASS")
+        self.column_4.setText("math")
 
         self.column_5 = QTableWidgetItem()
         self.column_5.setTextAlignment(Qt.AlignCenter)
-        self.column_5.setText("PASS")
+        self.column_5.setText("english")
 
         self.column_6 = QTableWidgetItem()
         self.column_6.setTextAlignment(Qt.AlignCenter)
-        self.column_6.setText("PASS")
+        self.column_6.setText("physics")
 
         self.column_7 = QTableWidgetItem()
         self.column_7.setTextAlignment(Qt.AlignCenter)
-        self.column_7.setText("PASS")
+        self.column_7.setText("chemistry")
 
         self.column_8 = QTableWidgetItem()
         self.column_8.setTextAlignment(Qt.AlignCenter)
-        self.column_8.setText("PASS")
+        self.column_8.setText("political")
 
         self.column_9 = QTableWidgetItem()
         self.column_9.setTextAlignment(Qt.AlignCenter)
-        self.column_9.setText("PASS")
+        self.column_9.setText("history")
 
         self.column_10 = QTableWidgetItem()
         self.column_10.setTextAlignment(Qt.AlignCenter)
-        self.column_10.setText("PASS")
+        self.column_10.setText("geography")
 
         self.column_11 = QTableWidgetItem()
         self.column_11.setTextAlignment(Qt.AlignCenter)
-        self.column_11.setText("PASS")
+        self.column_11.setText("biology")
 
         self.column_12 = QTableWidgetItem()
         self.column_12.setTextAlignment(Qt.AlignCenter)
-        self.column_12.setText("PASS")
+        self.column_12.setText("level_pol")
 
         self.column_13 = QTableWidgetItem()
         self.column_13.setTextAlignment(Qt.AlignCenter)
-        self.column_13.setText("PASS")
+        self.column_13.setText("level_his")
 
         self.column_14 = QTableWidgetItem()
         self.column_14.setTextAlignment(Qt.AlignCenter)
-        self.column_14.setText("PASS")
+        self.column_14.setText("level_physics")
 
         self.column_15 = QTableWidgetItem()
         self.column_15.setTextAlignment(Qt.AlignCenter)
-        self.column_15.setText("PASS")
+        self.column_15.setText("level_chem")
 
         self.column_16 = QTableWidgetItem()
         self.column_16.setTextAlignment(Qt.AlignCenter)
-        self.column_16.setText("PASS")
+        self.column_16.setText("level_geo")
 
         self.column_17 = QTableWidgetItem()
         self.column_17.setTextAlignment(Qt.AlignCenter)
-        self.column_17.setText("PASS")
+        self.column_17.setText("level_bio")
 
         self.column_18 = QTableWidgetItem()
         self.column_18.setTextAlignment(Qt.AlignCenter)
-        self.column_18.setText("PASS")
+        self.column_18.setText("physical")
 
         self.column_19 = QTableWidgetItem()
         self.column_19.setTextAlignment(Qt.AlignCenter)
-        self.column_19.setText("PASS")
+        self.column_19.setText("comprehensive")
 
         self.column_20 = QTableWidgetItem()
         self.column_20.setTextAlignment(Qt.AlignCenter)
-        self.column_20.setText("PASS")
+        self.column_20.setText("experiment")
 
         self.column_21 = QTableWidgetItem()
         self.column_21.setTextAlignment(Qt.AlignCenter)
-        self.column_21.setText("PASS")
+        self.column_21.setText("music_art")
 
         self.column_22 = QTableWidgetItem()
         self.column_22.setTextAlignment(Qt.AlignCenter)
-        self.column_22.setText("PASS")
+        self.column_22.setText("total")
 
-        self.column_23 = QTableWidgetItem()
-        self.column_23.setTextAlignment(Qt.AlignCenter)
-        self.column_23.setText("PASS")
-
+        # self.column_23 = QTableWidgetItem()
+        # self.column_23.setTextAlignment(Qt.AlignCenter)
+        # self.column_23.setText("PASS")
         # self.column_24 = QTableWidgetItem()
         # self.column_24.setTextAlignment(Qt.AlignCenter)
         # self.column_24.setText("PASS")
@@ -442,7 +447,7 @@ class SetupMainWindow:
         self.table_widget.setHorizontalHeaderItem(20, self.column_20)
         self.table_widget.setHorizontalHeaderItem(21, self.column_21)
         self.table_widget.setHorizontalHeaderItem(22, self.column_22)
-        self.table_widget.setHorizontalHeaderItem(23, self.column_23)
+        # self.table_widget.setHorizontalHeaderItem(23, self.column_23)
         # self.table_widget.setHorizontalHeaderItem(24, self.column_24)
         # self.table_widget.setHorizontalHeaderItem(25, self.column_25)
         # self.table_widget.setHorizontalHeaderItem(26, self.column_26)
@@ -478,7 +483,7 @@ class SetupMainWindow:
         )
         self.help_text_label = QLabel(
             '''
-① 在文件选择中选择要读取的学生信息Excel表格\n② 确认成绩查询网址是否正确\n③ 选择正确的文件保存路径\n④ 点击运行，当进度达到100%，将出现‘完成’按钮，点击回到开始界面\n⑤ 在右边菜单栏点击表格图标，将查看学生成绩信息\n⑦ 在表格界面点击导出，可以将信息以Excel文件形式导出到之前的保存路径！
+① 在文件选择中选择要读取的学生信息Excel表格\n② 确认成绩查询网址是否正确\n③ 选择正确的文件保存路径\n④ 点击运行，当进度达到100%，将出现‘完成’按钮，点击回到开始界面\n⑤ 在右边菜单栏点击表格图标，将查看学生成绩信息\n⑦ 在表格界面点击导出，可以将信息以Excel文件形式导出到之前的保存路径\n\n\n作者：兰天翔\n特别鸣谢：PyOneDark
             '''
         )
         self.help_text_label.setStyleSheet(
@@ -502,7 +507,7 @@ class SetupMainWindow:
 
         # 槽函数所需参数
         caption = '请选择一个文件'
-        directory = './'
+        directory = '../'
         file_filter = 'Excel文件(*.xlsx *.xls);;所有文件(*.*)'
         initial_filter = 'Excel文件(*.xls *.xlsx)'
 

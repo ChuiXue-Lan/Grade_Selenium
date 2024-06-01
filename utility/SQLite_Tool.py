@@ -11,8 +11,7 @@ import configparser
 
 config = configparser.ConfigParser()
 config.read('../config/config.ini', encoding='utf-8')
-path = config.get('excel', 'path')
-# save_path = config.get('excel', 'save_path')
+path = '../grade.xls'
 
 
 class SQL:
@@ -22,7 +21,7 @@ class SQL:
         self.results = None  # 查询结果
         self.cursor = self.conn.cursor()  # 创建游标对象
         self.create_table()  # 创建grade表
-        self.readExcel()
+        self.readExcel(path)
 
         self.info_num = 0
 
@@ -59,7 +58,15 @@ class SQL:
         )
 
     # 从Excel文件读取数据
-    def readExcel(self):
+    def readExcel(self, file_path):  # TODO: 67-69行有用吗？不加就不能实现表格切换，为什么？
+        print(file_path)
+        self.clean_table()
+
+        global path
+        if config.get('excel', 'path') != '':
+            path = config.get('excel', 'path')
+
+        path = file_path
         # 读取 Excel 文件，仅选择 'name' 、 'exam_id' 和 'idcard' 列的数据
         excel_data = pd.read_excel(path, usecols=['name', 'exam_id', 'idcard'])
 
@@ -138,6 +145,12 @@ class SQL:
         self.cursor.execute('SELECT * FROM grade')
         # 获取查询结果
         self.results = self.cursor.fetchall()
+
+    # 清空数据表
+    def clean_table(self):
+        print('清空数据')
+        self.cursor.execute('delete from grade')
+        # 只有清空数据表，才能保证readExcel()执行pd.merge(..)时正常运行
 
     # 获取数据总数
     def get_info_num(self):

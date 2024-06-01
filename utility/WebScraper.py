@@ -6,6 +6,7 @@
 # @Describe: 中考成绩爬虫
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.edge.options import Options
 from selenium.webdriver.support.ui import Select
 import time
 import configparser
@@ -24,22 +25,12 @@ class WebScraper:
 
     # 爬取信息
     def get_info_web(self, garde_id, ID, name):
-        # edge_options = Options()
-        # edge_options.add_argument('--headless')
-        # edge_options.add_argument('--disable-gpu')
-        #
-        # service = Service('E:/Compiler/browser/edge/MicrosoftWebDriver.exe')
-        # # 规避检测
-        # # 实例化对象
-        # option = EdgeOptions()
-        # option.add_experimental_option('excludeSwitches', ['enable-automation'])  # 开启实验性功能
-        # # 去除特征值
-        # option.add_argument("--disable-blink-features=AutomationControlled")
-        # # 实例化Edge
-        # browser = webdriver.Edge(options=option, service=service)
-        # browser.get('http://218.26.234.85/views/search.html')
-
-        browser = webdriver.Edge()
+        # 无头
+        edge_options = Options()
+        edge_options.add_argument('--headless')
+        edge_options.add_argument('--disable-gpu')
+        # service = Service('E:/Compiler/browser/edge/MicrosoftWebDriver.exe')  # 不需要
+        browser = webdriver.Edge(options=edge_options)
         website = config.get('web', 'site')
         browser.get(website)
         time.sleep(1)

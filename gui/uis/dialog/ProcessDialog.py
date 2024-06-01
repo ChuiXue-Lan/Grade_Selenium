@@ -74,3 +74,7 @@ class ProcessDialog(QDialog):
 
         timer.timeout.connect(change_progress)
         timer.start(1000)
+
+    def finish(self, thread):  # TODO:不确定是否需要
+        self.close()
+        # 结束爬虫线程

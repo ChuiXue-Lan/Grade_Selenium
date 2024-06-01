@@ -9,6 +9,7 @@ import os
 
 from PySide6.QtWidgets import QFileDialog, QMessageBox
 
+from utility.Config_Tool import modify_config_filepath
 from utility.SQLite_Tool import SQL
 
 
@@ -21,6 +22,13 @@ def select_file(window, *args, **kwargs):
     file = QFileDialog.getOpenFileName(window, caption, directory, file_filter, initial_filter)
     window.file_path_line.setText(file[0])
 
+    # 修改config
+    # modify_config_filepath(file[0])
+
+    # 修改数据库
+    sql = SQL()
+    sql.readExcel(file[0])
+
 
 # 保存Excel文件
 def save_file(window, *args, **kwargs):
@@ -29,7 +37,6 @@ def save_file(window, *args, **kwargs):
     file_filter = args[2]
     initial_filter = args[3]
     file = QFileDialog.getSaveFileName(window, caption, directory, file_filter, initial_filter)
-
 
     # ini写入file【0】 暂不实现，价值不大
     save_path = file[0]

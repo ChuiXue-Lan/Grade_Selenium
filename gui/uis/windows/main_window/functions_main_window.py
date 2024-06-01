@@ -152,11 +152,9 @@ class MainFunctions():
         settings_items = settings.items
         themes = settings_items["theme_name"]
         if themes == 'default':
-            settings_items["theme_name"] = "dracula"
-            print("dracula")
+            settings_items["theme_name"] = "lan_bright"
         else:
             settings_items["theme_name"] = "default"
-            print("default")
 
         # 反序列化
         settings.serialize()
